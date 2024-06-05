@@ -1,0 +1,46 @@
+nav {
+  padding-block: 30px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(6, 20, 29, 0.9);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: max-content;
+}
+
+.logo {
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: var(--bright-blue);
+  padding-left: 2px;
+  padding-top: 3px;
+}
+
+.nav-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links-wrapper a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links-wrapper a img {
+  max-width: 20px;
+}

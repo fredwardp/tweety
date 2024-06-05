@@ -39,9 +39,27 @@ const deleteCommentCtrl = asyncHandler(async (req, res) => {
   sendResponse(res, result);
 });
 
+const postLikeForCommentCtrl = asyncHandler(async (req, res) => {
+  const userId = getUserId(req);
+  const tweetId = req.params.tweetId;
+  const commentId = req.params.commentId;
+  const result = await CommentServices.createLike(userId, tweetId, commentId);
+  sendResponse(res, result);
+});
+
+const deleteLikeForCommentCtrl = asyncHandler(async (req, res) => {
+  const userId = getUserId(req);
+  const tweetId = req.params.tweetId;
+  const commentId = req.params.commentId;
+  const result = await CommentServices.removeLike(userId, tweetId, commentId);
+  sendResponse(res, result);
+});
+
 export const commentController = {
   getAllCommentsCtrl,
   postCommentCtrl,
   patchCommentCtrl,
   deleteCommentCtrl,
+  postLikeForCommentCtrl,
+  deleteLikeForCommentCtrl,
 };

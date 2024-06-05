@@ -1,0 +1,137 @@
+.profile-aside {
+  width: 22%;
+  min-width: 309px;
+}
+
+.aside-sticky-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 104px;
+  margin-top: 0;
+}
+
+.aside-profile-wrapper {
+  background-color: var(--dark-grey-transparent);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 25px 30px 25px 30px;
+}
+
+.profile-aside .aside-profile-picture {
+  width: 60px;
+  height: 60px;
+}
+
+.aside-profile-wrapper h2 {
+  font-family: nunito-sans-bold;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.aside-profile-username {
+  color: var(--text-dark);
+  opacity: 0.9;
+}
+
+.aside-profile-bio {
+  max-width: 25ch;
+  margin-bottom: 20px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.stats-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  font-family: nunito-sans-light;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stats h3 {
+  color: var(--text-dark);
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.aside-follow-wrapper {
+  background-color: var(--dark-grey-transparent);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 30px 25px 30px;
+}
+
+.aside-follow-wrapper h2 {
+  font-family: nunito-sans-light;
+  font-size: 17px;
+  opacity: 0.8;
+}
+
+.follow-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.follow-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.follow-btn {
+  background-color: var(--light-grey);
+  color: var(--dark-blue);
+  border: unset;
+  border-radius: 200px;
+  padding: 8px 12px;
+  height: max-content;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.follow-btn span {
+  font-weight: 800;
+  color: var(--dark-blue);
+}
+
+.follow-left-div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.follow-name-wrapper h3 {
+  font-size: 16px;
+  font-family: nunito-sans-light;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.follow-name-wrapper p {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.follow-left-div .follow-picture {
+  max-width: 50px;
+  max-height: 50px;
+}

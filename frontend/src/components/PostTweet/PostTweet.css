@@ -1,0 +1,64 @@
+.post-tweet {
+  background-color: var(--dark-grey-transparent);
+  width: 100%;
+  padding: 25px 20px;
+  display: flex;
+  border-radius: 20px;
+  gap: 20px;
+}
+
+.profile-picture-border {
+  border: 1px solid var(--light-grey);
+}
+
+.style-corner {
+  position: absolute;
+  left: -18px;
+  top: 0;
+}
+
+.post-tweet form {
+  position: relative;
+  background-color: var(--mid-grey);
+  padding: 15px 20px;
+  border-radius: 0 15px 15px 15px;
+  width: 100%;
+}
+
+.close-img-upload {
+  background-color: var(--mid-grey);
+  border: unset;
+  border-radius: 100px;
+  padding: 0;
+  position: absolute;
+  top: 28px;
+  right: 10px;
+  height: 22px;
+  width: max-content;
+  cursor: pointer;
+}
+
+.post-tweet form .tweet-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  font-size: 13px;
+  padding: 5px 15px;
+  font-family: nunito-sans-bold;
+}
+
+.post-tweet form input {
+  background-color: unset;
+  border: unset;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.post-tweet form input::placeholder {
+  color: var(--light-grey);
+  font-family: nunito-sans-light;
+}
+
+.post-tweet form input[type="file"] {
+  display: none;
+}

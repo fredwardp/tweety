@@ -1,10 +1,10 @@
 import "./Login.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { backendUrl } from "../api/api";
 import { UserDataContext, TokenDataContext } from "../../context/Context";
+import { backendUrl } from "../../api/api";
 
-const Login = ({ setToken, setUser }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,7 +17,7 @@ const Login = ({ setToken, setUser }) => {
   const loginHandler = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${backendUrl}/users/login`, {
+    const res = await fetch(`${backendUrl}/user/login`, {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify({ email, password }),
@@ -29,43 +29,55 @@ const Login = ({ setToken, setUser }) => {
     if (!data.result)
       return setErrorMessage(data.message || "Failed verify email");
 
+    setUser(data.result.userData);
+    console.log(data.result.userData);
+    setToken(data.result.tokens.accessToken);
+
     navigate("/");
 
     // save token --> "logged in"
-
-    setUser(data.result.userData);
-    setToken(data.result.token);
   };
   return (
-    <main>
-      <h1>Login</h1>
-      <form>
-        <p style={{ color: "red" }}>{errorMessage}</p>
-        <div>
-          <label htmlFor="email">Email</label>
+    <main className="notLoggedInSec">
+      <article className="log_reg_wrapper">
+        <h1>
+          <span>Login</span> to find out what's going on in the world
+        </h1>
+        <form>
+          <p style={{ color: "red" }}>{errorMessage}</p>
+
           <input
             id="email"
             type="email"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
+
           <input
             id="password"
             type="password"
+            placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
+          <div className="btn_wrapper">
+            <button className="btn" onClick={loginHandler}>
+              Login
+            </button>
+            <Link className="btn btn_dark" to="/register">
+              or register
+            </Link>
+          </div>
+        </form>
 
-        <button onClick={loginHandler}>Login</button>
-      </form>
-
-      <p>
-        Don't have an account yet? <Link to="/register">Create Account</Link>
-      </p>
+        <p>
+          Forgot your password?{" "}
+          <Link style={{ textDecoration: "underline " }} to="/register">
+            Click here
+          </Link>
+        </p>
+      </article>
     </main>
   );
 };

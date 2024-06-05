@@ -16,12 +16,6 @@ const userSchema = new mongoose.Schema(
       default:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXkUYyT0CvTW1zSxlUcnBuZlzQOSw8fmPWIzAEIR_fYA&s",
     },
-    followed: [
-      {
-        userId: { type: mongoose.Types.ObjectId, required: true },
-        userName: { type: String, trim: true, required: true },
-      },
-    ],
   },
   { collection: "users", timestamps: true }
 );

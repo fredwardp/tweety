@@ -1,0 +1,72 @@
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.write-comment {
+  background-color: var(--mid-grey);
+  border-radius: 0 10px 10px 10px;
+  padding: 15px;
+  position: relative;
+}
+
+.comment-profile-picture {
+  position: absolute;
+  left: -60px;
+  top: 5px;
+  z-index: 2;
+}
+
+.comment-input {
+  background-color: unset;
+  border: unset;
+  width: 100%;
+  margin-bottom: 10px;
+  /* height: 30px; */
+  margin-bottom: 25px;
+}
+
+.comment-input::placeholder {
+  color: var(--light-grey);
+}
+
+.write-comment form .tweet-btn {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 12px;
+  padding: 4px 12px;
+  font-family: nunito-sans-bold;
+  opacity: 0.9;
+  color: white;
+}
+
+.comment-wrapper {
+  background-color: var(--mid-grey);
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.comment-wrapper div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.comment-wrapper div h3 {
+  font-size: 13px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.comment-wrapper div img {
+  width: 30px;
+  height: 30px;
+}
+
+.comment-wrapper p {
+  margin-left: 39px;
+}

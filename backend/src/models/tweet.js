@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const tweetSchema = new mongoose.Schema(
   {
-    userId: { type: mongoose.Types.ObjectId, required: true },
+    userId: { type: mongoose.Types.ObjectId, ref: "User", required: true },
     media: { type: String },
     text: { type: String, required: true, trim: true },
   },

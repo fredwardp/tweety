@@ -1,0 +1,44 @@
+.edit-comment {
+  background-color: unset;
+  border: unset;
+  position: absolute;
+  right: 15px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.edit-comment-popup {
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: var(--mid-grey);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edit-comment-popup button {
+  background-color: unset;
+  border: unset;
+  /* color: var(--light-purple);
+    text-transform: uppercase; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.edit-comment-popup button img {
+  width: 20px;
+}
+
+.edit-comment-popup .close-popup {
+  position: absolute;
+  top: -7px;
+  right: -5px;
+}

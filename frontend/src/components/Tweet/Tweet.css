@@ -1,0 +1,79 @@
+.show-tweet {
+  background-color: var(--dark-grey-transparent);
+  width: 100%;
+  padding: 25px 45px 25px 20px;
+  display: flex;
+  border-radius: 20px;
+  gap: 20px;
+  position: relative;
+}
+
+.tweet-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 7px;
+  width: 100%;
+}
+
+.tweet-userinfos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tweet-userinfos h2 {
+  font-size: 17px;
+}
+
+.tweet-username {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.tweeted-at {
+  font-size: 12px;
+  color: var(--text-dark);
+}
+.tweet-text {
+  font-size: 18px;
+  font-family: nunito-sans-bold;
+  letter-spacing: 0.3px;
+}
+
+.tweet-img {
+  border-radius: 10px;
+}
+
+.tweet-reactions {
+  display: flex;
+  gap: 15px;
+}
+
+.see-interactions-btn {
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+}
+.tweet-reactions div {
+  display: flex;
+  gap: 3px;
+  font-family: nunito-sans-light;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.tweet-reactions div img {
+  max-width: 17px;
+}
+
+.edit-tweet {
+  background-color: unset;
+  border: unset;
+  width: max-content;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  opacity: 0.6;
+  cursor: pointer;
+}

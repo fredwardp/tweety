@@ -1,0 +1,96 @@
+.settings-btn {
+  background-color: unset;
+  border: unset;
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 6px;
+  margin-top: -20px;
+}
+
+.settings-popup {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.859);
+  width: 100%;
+  right: 0;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  scroll-behavior: unset;
+}
+
+.settings-info-wrapper {
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+  padding: 25px 45px 25px 25px;
+  width: 48%;
+  max-width: 726px;
+  background-color: var(--dark-grey);
+  position: relative;
+  border: 2px solid var(--mid-grey);
+}
+
+.close-settings {
+  position: absolute;
+  background-color: unset;
+  border: unset;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.settings-description {
+  border-bottom: 2px solid var(--mid-grey);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.settings-description h2 {
+  font-size: 36px;
+  padding-bottom: 5px;
+  font-family: nunito-sans-bold;
+  letter-spacing: 0.3px;
+}
+
+.settings-description p {
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.settings-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.settings-input {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background-color: var(--mid-grey);
+  border-radius: 0px 10px 10px 10px;
+  padding: 0px 20px;
+  height: 40px;
+}
+
+.settings-input label {
+  font-size: 17px;
+  font-family: nunito-sans-bold;
+  border-right: 1px solid rgba(220, 220, 220, 0.326);
+  padding-right: 10px;
+  width: 180px;
+}
+.settings-input input {
+  border: unset;
+  background-color: unset;
+  width: 100%;
+}
+
+.settings-input input::placeholder {
+  font-size: 18px;
+}
+/* 
+.profile-settings-btn{} */

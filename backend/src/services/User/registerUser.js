@@ -1,4 +1,5 @@
 import { User } from "../../models/user.js";
+import { createToken } from "../../utils/createToken.js";
 import { generateRandomSalt, hash } from "../../utils/hash.js";
 import { sendEmail } from "../../utils/sendEmail.js";
 import { userView } from "../helpers.js";
@@ -32,8 +33,10 @@ export const registerUser = async ({
     sixDigitCode: sixDigitCode,
   });
 
+  const token = createToken(user, "access");
+  const userData = userView(user);
   await sendEmailVerification(user);
-  return userView(user);
+  return { userData: userData, token: token };
 };
 
 export const sendEmailVerification = async (user) => {

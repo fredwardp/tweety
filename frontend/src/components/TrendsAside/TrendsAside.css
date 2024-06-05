@@ -1,0 +1,63 @@
+.trends-aside {
+  width: 22%;
+}
+
+.trends-aside-wrapper {
+  background-color: var(--dark-grey-transparent);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 104px;
+  margin-top: 0;
+  padding: 25px 30px;
+}
+
+.trends-heading-wrapper {
+  border-bottom: 3px solid var(--mid-grey);
+  padding-bottom: 5px;
+  width: max-content;
+  border-radius: 2px;
+}
+
+.trends-aside-wrapper h2 {
+  font-weight: 300;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.trending {
+  border-bottom: 2px solid var(--mid-grey);
+  padding-bottom: 15px;
+}
+
+.trending:last-of-type {
+  border-bottom: unset;
+}
+
+.trending h3 {
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-family: nunito-sans-light;
+  font-weight: 400;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.trend-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+
+.trend-wrapper h4 {
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.trend-wrapper p {
+  font-size: 15px;
+  opacity: 0.5;
+}
