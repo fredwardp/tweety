@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import {
   AllUserDataContext,
-  ReloadContext,
   TokenDataContext,
   UserDataContext,
 } from "../../context/Context";
@@ -13,7 +12,6 @@ import SearchBar from "../SearchBar/SearchBar";
 const Nav = () => {
   const { allUser, setAllUser } = useContext(AllUserDataContext);
   const { token, setToken } = useContext(TokenDataContext);
-  const { reload } = useContext(ReloadContext);
   const { user } = useContext(UserDataContext);
 
   useEffect(() => {
@@ -28,10 +26,10 @@ const Nav = () => {
 
         // console.log(data);
 
-        if (!data.result) {
-          setErrorMessage(data.message || "Could not load allUserData");
-          return;
-        }
+        // if (!data.result) {
+        //   setErrorMessage(data.message || "Could not load allUserData");
+        //   return;
+        // }
 
         setAllUser(data.result);
       } catch (error) {

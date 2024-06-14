@@ -1,27 +1,24 @@
 import { backendUrl } from "../../api/api";
-import {
-  ReloadContext,
-  TokenDataContext,
-  UserDataContext,
-} from "../../context/Context";
+import { TokenDataContext, UserDataContext } from "../../context/Context";
 import "./ProfileSettings.css";
 import { useContext, useState } from "react";
+import PropTypes from "prop-types";
 
-const ProfileSettings = ({ setUser, user }) => {
+const ProfileSettings = ({ user }) => {
   const [settingsToggle, setSettingsToggle] = useState(false);
   const { user: myUserData, setUser: setMyUserData } =
     useContext(UserDataContext);
   const { token } = useContext(TokenDataContext);
-  const { reloadProfile, setReloadProfile } = useContext(ReloadContext);
   const [updateUserInfo, setUpdateUserInfo] = useState({
-    userName: user.userName,
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-    bio: user.bio,
-    profilePicture: user.profilePicture,
+    userName: myUserData.userName,
+    firstName: myUserData.firstName,
+    lastName: myUserData.lastName,
+    email: myUserData.email,
+    bio: myUserData.bio,
+    profilePicture: myUserData.profilePicture,
   });
-  const [test, setTest] = useState();
+
+  console.log(user);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -174,6 +171,10 @@ const ProfileSettings = ({ setUser, user }) => {
       )}
     </article>
   );
+};
+
+ProfileSettings.propTypes = {
+  user: PropTypes.object,
 };
 
 export default ProfileSettings;

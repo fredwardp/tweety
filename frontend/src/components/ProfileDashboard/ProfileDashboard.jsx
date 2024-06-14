@@ -4,26 +4,27 @@ import { backendUrl } from "../../api/api";
 import Tweet from "../Tweet/Tweet";
 import {
   ReloadContext,
-  ReloadProfile,
+  ReloadProfileContext,
   UserDataContext,
 } from "../../context/Context";
 import FollowmentPopUp from "../FollowmentPopUp/FollowmentPopUp";
 import ProfileSettings from "../ProfileSettings/ProfileSettings";
+import PropTypes from "prop-types";
+
 const ProfileDashboard = ({ user, token, setUser }) => {
-  const [errorMessage, setErrorMessage] = useState("");
+  const [setErrorMessage] = useState("");
   const [userTweets, setUserTweets] = useState([]);
   const [popUpToggle, setPopUpToggle] = useState("");
   const [followmentData, setFollowmentData] = useState([]);
   const { user: loggedInUser, setUser: setLoggedInUser } =
     useContext(UserDataContext);
-  const { reloadProfile, setReloadProfile } = useContext(ReloadProfile);
-  const { reload, setReload } = useContext(ReloadContext);
+  const { setReloadProfile } = useContext(ReloadProfileContext);
+  const { reload } = useContext(ReloadContext);
 
   useEffect(() => {
     const userPostsHandler = async () => {
       if (user._id) {
         try {
-          console.log();
           const res = await fetch(`${backendUrl}/tweets/feed/${user._id}`, {
             headers: { authorization: `Bearer ${token}` },
             credentials: "include",
@@ -32,13 +33,13 @@ const ProfileDashboard = ({ user, token, setUser }) => {
           const data = await res.json();
 
           if (!data.result) {
-            setErrorMessage(data.message || "Could not load feed tweets");
+            setErrorMessage(data.message || "Could not load user tweets");
             return;
           }
 
           setUserTweets(data.result.tweets);
         } catch (error) {
-          console.log("An error occurred while fetching feed tweets");
+          console.log("An error occurred while fetching user tweets");
         }
       }
     };
@@ -217,6 +218,12 @@ const ProfileDashboard = ({ user, token, setUser }) => {
   ) : (
     <p>loading</p>
   );
+};
+
+ProfileDashboard.propTypes = {
+  user: PropTypes.object,
+  token: PropTypes.string,
+  setUser: PropTypes.func,
 };
 
 export default ProfileDashboard;

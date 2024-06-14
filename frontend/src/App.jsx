@@ -5,7 +5,7 @@ import {
   TokenDataContext,
   AllUserDataContext,
   ReloadContext,
-  ReloadProfile,
+  ReloadProfileContext,
 } from "./context/Context";
 import { useState } from "react";
 import Home from "./pages/Home/Home";
@@ -23,8 +23,9 @@ function App() {
   const [allUser, setAllUser] = useState();
   const [reload, setReload] = useState(true);
   const [reloadProfile, setReloadProfile] = useState(true);
+
   return (
-    <ReloadProfile.Provider value={{ reloadProfile, setReloadProfile }}>
+    <ReloadProfileContext.Provider value={{ reloadProfile, setReloadProfile }}>
       <ReloadContext.Provider value={{ reload, setReload }}>
         <AllUserDataContext.Provider value={{ allUser, setAllUser }}>
           <UserDataContext.Provider value={{ user, setUser }}>
@@ -79,7 +80,7 @@ function App() {
           </UserDataContext.Provider>
         </AllUserDataContext.Provider>
       </ReloadContext.Provider>
-    </ReloadProfile.Provider>
+    </ReloadProfileContext.Provider>
   );
 }
 

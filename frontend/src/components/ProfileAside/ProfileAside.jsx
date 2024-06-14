@@ -6,7 +6,7 @@ import { UserDataContext, TokenDataContext } from "../../context/Context";
 
 const ProfileAside = () => {
   const { user, setUser } = useContext(UserDataContext);
-  const { token, setToken } = useContext(TokenDataContext);
+  const { token } = useContext(TokenDataContext);
   return (
     <aside className="profile-aside">
       <div className="aside-sticky-wrapper">

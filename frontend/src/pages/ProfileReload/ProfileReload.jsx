@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import "./Profile.css";
 import { useContext, useEffect, useState } from "react";
 import { backendUrl } from "../../api/api";
-import { ReloadContext, TokenDataContext } from "../../context/Context";
+import { ReloadProfileContext, TokenDataContext } from "../../context/Context";
 import Nav from "../../components/Nav/Nav";
 import ProfileAside from "../../components/ProfileAside/ProfileAside";
 import TrendsAside from "../../components/TrendsAside/TrendsAside";
@@ -10,12 +10,11 @@ import ProfileDashboard from "../../components/ProfileDashboard/ProfileDashboard
 
 const ProfileReload = () => {
   const { id } = useParams();
-  const [userId, setuserId] = useState(id);
   const { token } = useContext(TokenDataContext);
-  const { reloadProfile, setReloadProfile } = useContext(ReloadContext);
+  const { reloadProfile } = useContext(ReloadProfileContext);
   const [user, setUser] = useState({});
-  const [errorMessage, setErrorMessage] = useState("");
-
+  const [setErrorMessage] = useState("");
+  console.log(reloadProfile);
   useEffect(() => {
     const userInfoHandler = async () => {
       try {

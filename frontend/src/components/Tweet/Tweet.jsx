@@ -46,8 +46,8 @@ const Tweet = ({ tweetInfo }) => {
   };
   const newTweetDate = changeTweetDateFormat(tweetInfo?.createdAt);
   // const retweetedTweetDate = changeTweetDateFormat(retweetedTweet?.createdAt);
-  console.log(newTweetAge);
-  console.log(newTweetDate);
+  // console.log(newTweetAge);
+  // console.log(newTweetDate);
 
   return (
     <article className="show-tweet ">

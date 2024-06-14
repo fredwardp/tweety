@@ -1,20 +1,15 @@
 import "./Dashboard.css";
 import { useContext, useEffect, useState } from "react";
-import {
-  UserDataContext,
-  TokenDataContext,
-  ReloadContext,
-} from "../../context/Context";
+import { TokenDataContext, ReloadContext } from "../../context/Context";
 import PostTweet from "../PostTweet/PostTweet";
 import { backendUrl } from "../../api/api";
 import Tweet from "../Tweet/Tweet";
 
 const Dashboard = () => {
-  const { user, setUser } = useContext(UserDataContext);
-  const { token, setToken } = useContext(TokenDataContext);
-  const [errorMessage, setErrorMessage] = useState();
+  const { token } = useContext(TokenDataContext);
+  const [setErrorMessage] = useState();
   const [feed, setFeed] = useState([]);
-  const { reload, setReload } = useContext(ReloadContext);
+  const { reload } = useContext(ReloadContext);
 
   useEffect(() => {
     const getFeedHandler = async () => {

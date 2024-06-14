@@ -2,16 +2,36 @@ import { useContext, useState } from "react";
 import "./PostTweet.css";
 import { backendUrl } from "../../api/api";
 import { ReloadContext, UserDataContext } from "../../context/Context";
+import PropTypes from "prop-types";
 
 const PostTweet = ({ token }) => {
-  const [errorMessage, setErrorMessage] = useState();
-  const { reload, setReload } = useContext(ReloadContext);
+  const [setErrorMessage] = useState();
+  const { setReload } = useContext(ReloadContext);
   const { user, setUser } = useContext(UserDataContext);
   const [newTweet, setNewTweet] = useState({
     userId: user._id,
     media: null,
     text: "",
   });
+
+  // -- Img verkleinern vor dem hochladen
+  // import Resizer from 'react-image-file-resizer';
+
+  // const resizeFile = (file) =>
+  //   new Promise((resolve) => {
+  //     Resizer.imageFileResizer(
+  //       file,
+  //       300, // maximale Breite
+  //       300, // maximale Höhe
+  //       'JPEG', // Ausgabeformat
+  //       70, // Qualitätsstufe
+  //       0, // Drehung
+  //       (uri) => {
+  //         resolve(uri);
+  //       },
+  //       'blob' // Ausgabe-Typ
+  //     );
+  //   });
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -97,7 +117,6 @@ const PostTweet = ({ token }) => {
               type="file"
               id="media"
               accept=".jpg, .png, .jpeg"
-              // value={newTweet.media}
               onChange={handleImageChange}
             />
 
@@ -109,6 +128,10 @@ const PostTweet = ({ token }) => {
       </form>
     </article>
   );
+};
+
+PostTweet.propTypes = {
+  token: PropTypes.string,
 };
 
 export default PostTweet;
