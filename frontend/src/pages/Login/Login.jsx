@@ -62,7 +62,7 @@ const Login = () => {
       return setErrorMessage(data.message || "Failed verify email");
 
     setUser(data.result.userData);
-    console.log(data.result.userData);
+    console.log(data.result.tokens);
     setToken(data.result.tokens.accessToken);
 
     navigate("/");

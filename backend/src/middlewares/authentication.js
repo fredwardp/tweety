@@ -26,6 +26,8 @@ export const validateRefreshTokenInCookieSession = (req, res, next) => {
 const createTokenVerifier = (req, res, next) => {
   return function (token, expectType = "access") {
     try {
+      console.log("token refresh:" + jwtSecret);
+      console.log("token refresh:" + token);
       const verifiedTokenClaims = jwt.verify(token, jwtSecret);
       if (verifiedTokenClaims.type !== expectType) return _invalidAuth(res);
       req.authenticatedUserId = verifiedTokenClaims.sub;

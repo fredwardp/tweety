@@ -22,5 +22,7 @@ export const createToken = (user, tokenType = "access") => {
   // Die eckigen Klammern sind die dynamische Schreibweise um auf einen bestimmten Key des Objektes zuzugreifen
 
   const token = jwt.sign(tokenPayload, jwtSecret, { expiresIn });
+  console.log("Token erstellung:" + token);
+  console.log("Token erstellung:" + jwtSecret);
   return token;
 };
